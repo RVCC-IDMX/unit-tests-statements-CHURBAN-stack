@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /*
  * stmnts-07.js
  * Language: javascript
@@ -13,7 +14,7 @@
  * ? [JavaScript: The Definitive Guide, Chapter 4.10](https://bit.ly/39lbxnK)
  */
 function logicalAnd(a, b) {
-  // write your code here & return
+  return a && b;
 }
 
 /**
@@ -23,7 +24,7 @@ function logicalAnd(a, b) {
  * @returns {boolean} - true if a or b is truthy, false if both are falsy
  */
 function logicalOr(a, b) {
-  // write your code here & return
+  return a || b;
 }
 
 /**
@@ -32,7 +33,7 @@ function logicalOr(a, b) {
  * @returns {boolean} - the opposite of the given boolean
  */
 function invertBoolean(bool) {
-  // write your code here & return
+  return !bool;
 }
 
 /**
@@ -49,7 +50,13 @@ function invertBoolean(bool) {
  * ? [JavaScript: The Definitive Guide, Chapter 5.4.3](https://bit.ly/39hrIlW)
  */
 function numberOfOdds(num) {
-  // write your code here & return
+  let oddCount = 0;
+  for (let i = 0; i < num; i++) {
+    if (i % 2 !== 0) {
+      oddCount++;
+    }
+  }
+  return oddCount;
 }
 
 /**
@@ -62,7 +69,11 @@ function numberOfOdds(num) {
  * ? For example, num is 4 then return 10 because 1 + 2 + 3 + 4 = 10.
  */
 function addUpTheNumbers(num) {
-  // write your code here & return
+  let sum = 0;
+  for (let i = 0; i <= num; i++) {
+    sum += i;
+  }
+  return sum;
 }
 
 /**
@@ -81,7 +92,25 @@ function addUpTheNumbers(num) {
  * ?
  */
 function gradeGenerator(score) {
-  // write your code here & return
+  let letterGrade;
+  switch (true) {
+    case score < 60:
+      letterGrade = 'F';
+      break;
+    case score < 70:
+      letterGrade = 'D';
+      break;
+    case score < 80:
+      letterGrade = 'C';
+      break;
+    case score < 90:
+      letterGrade = 'B';
+      break;
+    default:
+      letterGrade = 'A';
+      break;
+  }
+  return letterGrade;
 }
 
 /**
@@ -100,7 +129,10 @@ function gradeGenerator(score) {
  * ? note it's 'an A' (not a A) and 'an F' (not a F)
  */
 function getGrade(name, score) {
-  // write your code here & return
+  const letterGrade = gradeGenerator(score);
+  return 'AEF'.includes(letterGrade)
+    ? `${name} got an ${letterGrade}`
+    : `${name} got a ${letterGrade}`;
 }
 
 module.exports = {

@@ -12,7 +12,7 @@
  * @returns {boolean} - true if num is odd, false otherwise
  */
 function isOdd(num) {
-  return num % 4 !== 0;
+  return num % 2 !== 0;
 }
 
 /**
